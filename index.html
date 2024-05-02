@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="theme-color" content="rgb(0, 191, 255)">
+
+  <title>TripIt</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="res/logo_S.png">
+  
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <header>
+    <nav class="navigation-bar">
+        <div class="navbar-container">
+          <a href="index.html" class="logo">Trip<span>it</span></a>
+
+          <div class="menu">
+            <a href="index.html" class="is-active">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="dropbtn fas fa-user" onclick="navDropdownClick()"></a>
+              <div class="dropdown-content" id="navDropdown">
+                <a href="#" id="show-log-in-popup">Log In</a>
+                <a href="#" id="show-sign-in-popup">Register</a>
+              </div> 
+            <a href="#" class="fas fa-search" id="search-btn"></a>
+            </div> 
+          <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+    </nav>
+
+    <form action="" class="search-bar-container">
+      <input type="search" id="search-bar" placeholder="search here...">
+      <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+  </header>
+
+  <!--Hamburger Menu-->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-menu">
+      <a href="index.html" class="is-active">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" id="show-log-in-popup">Log In</a>
+      <a href="#" id="show-sign-in-popup">Register</a>
+      <a href="#" class="fas fa-search" id="search-btn"> Search</a>
+      </div>
+    </div>
+  </nav>
+     
+  <script>
+    function navDropdownClick() {
+      document.getElementById("navDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("navDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+  }
+  </script>
+      
+  <!-- Log-in pop-up menu -->
+  <div class="login-popup">
+    <div class="btnClose">&times;</div>
+    <div class="form">
+      <h2>Log In</h2>
+
+      <div class="form-element">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter email">
+      </div>
+
+      <div class="form-element">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+
+      <div class="form-element">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+
+      <div class="form-element">
+        <button type="submit" id="log-in">Log in</button>
+      </div>
+
+      <div class="form-element">
+        <label>Or Log In using:</label>
+      </div>
+  
+      <div class="social-media-icons">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-google"></i></a></li>
+          <li><a href="#"><i class="fab fa-apple"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="form-element">
+        <a href="#">Forgot password?</a>
+      </div>
+        <div class="form-element">
+          <a href="#" id="show-sign-in-popup">Don't have an account? Register now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign-in pop-up menu -->
+  <div class="signin-popup">
+    <div class="btnClose">&times;</div>
+    <div class="form">
+      <h2>Register</h2>
+  
+      <div class="form-element">
+        <label for="name">Name:</label>
+        <input type="text" id="lastName" placeholder="Enter Full Name">
+      </div>
+
+      <div class="form-element">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+      </div>
+
+      <div class="form-element">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+
+      <div class="form-element">
+        <button id="Register">Register Account</button>
+      </div>
+
+      <div class="form-element">
+        <label for="password">Or Sign Up Using:</label>
+      </div>
+
+      <div class="social-media-icons">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-google"></i></a></li>
+          <li><a href="#"><i class="fab fa-apple"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="form-element">
+        <a href="#">Already have an account? Log In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+
+    <div class="content">
+        <h3>let's catch your craziest dreams</h3>
+        <p>Reconnect with yourself and take time away from your hectic life.</p>
+        <a href="destinations.html" class="btn">Discover More</a>
+    </div>
+
+    <div class="controls">
+        <span class="vid-btn active" data-src="res/vid-2.mp4"></span>
+        <span class="vid-btn" data-src="res/vid-5.mp4"></span>
+        <span class="vid-btn" data-src="res/vid-1.mp4"></span>
+        <span class="vid-btn" data-src="res/vid-4.mp4"></span>
+        <span class="vid-btn" data-src="res/vid-3.mp4"></span>
+    </div>
+
+    <div class="video-container">
+        <video src="res/vid-2.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+</section>
+
+<!-- Services section -->
+
+<section class="services">
+
+  <h1 class="heading-title"> our services </h1>
+
+  <div class="box-container">
+
+     <div class="box">
+        <img src="res/adventure.png" alt="">
+        <h3>Adventure</h3>
+     </div>
+
+     <div class="box">
+        <img src="res/tour-guide.png" alt="">
+        <h3>Tour Guide</h3>
+     </div>
+
+     <div class="box">
+        <img src="res/trekking.png" alt="">
+        <h3>Trekking</h3>
+     </div>
+
+     <div class="box">
+        <img src="res/camp-fire.png" alt="">
+        <h3>Camp Fire</h3>
+     </div>
+
+     <div class="box">
+        <img src="res/off-road.png" alt="">
+        <h3>Off Road</h3>
+     </div>
+
+     <div class="box">
+        <img src="res/camping.png" alt="">
+        <h3>Camping</h3>
+     </div>
+
+  </div>
+</section>
+
+<!-- Trip booking section-->
+<section class="book" id="book">
+  <div class="row">
+    <div class="image">
+        <img src="res/book-icon.png" alt="">
+    </div>
+
+    <form action="">
+        <div class="inputBox">
+            <h3>Destination:</h3>
+            <input type="text" placeholder="Enter destination">
+        </div>
+        <div class="inputBox">
+            <h3>Number of guests:</h3>
+            <input type="number" placeholder="Enter number of guests">
+        </div>
+        <div class="inputBox">
+            <h3>Departure date:</h3>
+            <input type="date">
+        </div>
+        <div class="inputBox">
+            <h3>Arrival date:</h3>
+            <input type="date">
+        </div>
+        <div class="bookBtn">
+          <input type="submit" class="btn" value="Book now">
+        </div>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+    <div class="footer">
+        <div class="col-1">
+          <h3>Useful links</h3>
+          <a href="index.html">Home</a>
+          <a href="#">Account</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="col-2">
+          <h3>Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your email address" required>
+            <br>
+            <button type="submit">SUBSCRIBE NOW</button>
+          </form>
+        </div>
+        <div class="col-3">
+          <h3>Contact</h3>
+          <p>Bulevardul Iuliu Maniu 422, <br> Bucharest</p><br>
+          <p>online@contact.tripit.com</p>
+          <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+          </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

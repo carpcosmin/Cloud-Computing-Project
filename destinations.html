@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Destinations | TripIt</title>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="destinations.css">
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+  
+  <script src="destinations.js" defer></script>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <header>
+    <nav class="navigation-bar">
+        <div class="navbar-container">
+          <a href="index.html" class="logo">Trip<span>it</span></a>
+
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="destinations.html" class="is-active">Destinations</a>
+            <a href="Blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="dropbtn fas fa-user" onclick="navDropdownClick()"></a>
+              <div class="dropdown-content" id="navDropdown">
+                <a href="#" id="show-log-in-popup">Log In</a>
+                <a href="#" id="show-sign-in-popup">Register</a>
+              </div> 
+            <a href="#" class="fas fa-search" id="search-btn"></a>
+            </div> 
+          <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+    </nav>
+
+    <form action="" class="search-bar-container">
+      <input type="search" id="search-bar" placeholder="search here...">
+      <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+  </header>
+
+  <!--Hamburger Menu-->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-menu">
+        <a href="index.html">Home</a>
+        <a href="destinations.html" class="is-active">Destinations</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      <a href="#" id="show-log-in-popup">Log In</a>
+      <a href="#" id="show-sign-in-popup">Register</a>
+      <a href="#" class="fas fa-search" id="search-btn"> Search</a>
+      </div>
+    </div>
+  </nav>
+     
+  <script>
+    function navDropdownClick() {
+      document.getElementById("navDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("navDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+  }
+  </script>
+      
+  <!-- Log-in pop-up menu -->
+  <div class="login-popup">
+    <div class="btnClose">&times;</div>
+    <div class="form">
+      <h2>Log In</h2>
+
+      <div class="form-element">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter email">
+      </div>
+
+      <div class="form-element">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+
+      <div class="form-element">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember me</label>
+      </div>
+
+      <div class="form-element">
+        <button type="submit" id="log-in">Log in</button>
+      </div>
+
+      <div class="form-element">
+        <label>Or Log In using:</label>
+      </div>
+  
+      <div class="social-media-icons">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-google"></i></a></li>
+          <li><a href="#"><i class="fab fa-apple"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="form-element">
+        <a href="#">Forgot password?</a>
+      </div>
+        <div class="form-element">
+          <a href="#" id="show-sign-in-popup">Don't have an account? Register now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign-in pop-up menu -->
+  <div class="signin-popup">
+    <div class="btnClose">&times;</div>
+    <div class="form">
+      <h2>Register</h2>
+  
+      <div class="form-element">
+        <label for="name">Name:</label>
+        <input type="text" id="lastName" placeholder="Enter Full Name">
+      </div>
+
+      <div class="form-element">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email address">
+      </div>
+
+      <div class="form-element">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Password">
+      </div>
+
+      <div class="form-element">
+        <button id="Register">Register Account</button>
+      </div>
+
+      <div class="form-element">
+        <label for="password">Or Sign Up Using:</label>
+      </div>
+
+      <div class="social-media-icons">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-google"></i></a></li>
+          <li><a href="#"><i class="fab fa-apple"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="form-element">
+        <a href="#">Already have an account? Log In</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Destination section--->
+	<section class="destination" id="destination">
+        <div class="title">
+            <h1>Our Most Popular Destinations</h1>
+        </div>
+
+
+		<div class="destination-content">
+			<div class="col-content">
+				<img src="res/london.jpg">
+				<h5>London</h5>
+				<p>UNITED KINGDOM</p>
+			</div>
+
+            <div class="col-content">
+				<img src="res/paris.jpeg">
+				<h5>Paris</h5>
+				<p>FRANCE</p>
+			</div>
+
+			<div class="col-content">
+				<img src="res/rome.jpg">
+				<h5>Rome</h5>
+				<p>ITALY</p>
+			</div>
+
+            <div class="col-content">
+				<img src="res/prague.jpg">
+                <h5>Prague</h5>
+				<p>CZECH REPUBLIC</p>
+			</div>
+
+            <div class="col-content">
+				<img src="res/vienna.jpg">
+                <h5>Vienna</h5>
+				<p>AUSTRIA</p>
+			</div>
+
+            <div class="col-content">
+				<img src="res/istanbul.jpg">
+                <h5>Istanbul</h5>
+				<p>TURKEY</p>
+			</div>
+            
+            <div class="col-content">
+				<img src="res/dubai.jpg">
+                <h5>Dubai</h5>
+				<p>UAE</p>
+			</div>
+
+			<div class="col-content">
+				<img src="res/sf.jpg">
+				<h5>San Francisco</h5>
+				<p>U.S.A.</p>
+			</div>
+
+			<div class="col-content">
+				<img src="res/machu-picchu.jpg">
+				<h5>Machu Picchu</h5>
+				<p>PERU</p>
+			</div>
+		</div>
+ 
+    <!-- Map -->
+    <div class="map-container">
+      <h1>Choose your own destination!</h1>
+    <div id="map"></div>
+
+    
+    </div>
+        
+	</section>
+    
+<!-- Footer -->
+<footer>
+    <div class="footer">
+        <div class="col-1">
+          <h3>Useful links</h3>
+          <a href="index.html">Home</a>
+          <a href="#">Account</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="col-2">
+          <h3>Newsletter</h3>
+          <form>
+            <input type="email" placeholder="Your email address" required>
+            <br>
+            <button type="submit">SUBSCRIBE NOW</button>
+          </form>
+        </div>
+        <div class="col-3">
+          <h3>Contact</h3>
+          <p>Bulevardul Iuliu Maniu 422, <br> Bucharest</p><br>
+          <p>online@contact.tripit.com</p>
+          <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-whatsapp"></i>
+          </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+    <script src="destinations.js" defer></script>
+
+</body>
+</html>

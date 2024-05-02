@@ -1,0 +1,20 @@
+{
+    "name": "TripIt",
+    "short_name": "TripIt", 
+    "start_url": ".", 
+    "background_color": "#ffa500", 
+    "theme_color": "rgb(0, 191, 255)",
+    "display": "standalone", 
+    "icons": [
+      {
+        "src": "res/logo_S.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "res/logo_L.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
