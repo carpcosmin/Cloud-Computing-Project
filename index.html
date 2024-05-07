@@ -13,6 +13,7 @@
 
     <script type="module" src="register.js" defer></script>
     <script type="module" src="login.js" defer></script>
+    <script type="module" src="createBooking.js" defer></script>
   
 </head>
 
@@ -238,25 +239,25 @@
         <img src="res/book-icon.png" alt="">
     </div>
 
-    <form action="">
+    <form action="" id="bookingForm">
         <div class="inputBox">
             <h3>Destination:</h3>
-            <input type="text" placeholder="Enter destination">
+            <input type="text" placeholder="Enter destination" id="destination">
         </div>
         <div class="inputBox">
             <h3>Number of guests:</h3>
-            <input type="number" placeholder="Enter number of guests">
+            <input type="number" placeholder="Enter number of guests" id="guests">
         </div>
         <div class="inputBox">
             <h3>Departure date:</h3>
-            <input type="date">
+            <input type="date" id="departureDate">
         </div>
         <div class="inputBox">
             <h3>Arrival date:</h3>
-            <input type="date">
+            <input type="date" id="arrivalDate">
         </div>
         <div class="bookBtn">
-          <input type="submit" class="btn" value="Book now">
+          <input type="submit" class="btn" value="Book now" id="submit">
         </div>
     </form>
 
