@@ -1,0 +1,89 @@
+.add-post{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 98;
+}
+
+.post-form{
+    width: 55%;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 10%;
+}
+
+.post-form h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.post-form .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.post-form .inputBox input,
+.post-form .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+
+.post-form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color:#666;
+}
+
+.post-form .inputBox input:focus ~ span,
+.post-form .inputBox input:valid ~ span,
+.post-form .inputBox textarea:focus ~ span,
+.post-form .inputBox textarea:valid ~ span{
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.post-form .inputBox input[type="submit"]{
+    display: inline-block;
+    margin-top: 1rem;
+    background:var(--orange);
+    color:#fff;
+    padding:.8rem 3rem;
+    border:.2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.post-form .inputBox input[type="submit"]:hover{
+    background-color: var(--blue);
+}
+
+@media (max-width: 500px){
+    .add-post .post-form{
+        z-index: 99;
+        width: 150%;
+    }
+    .addPicture #canvas{
+        width: 380px;
+    }
+}
+
+
