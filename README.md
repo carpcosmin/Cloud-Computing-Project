@@ -23,3 +23,6 @@ POST: Utilizat pentru a crea o nouă rezervare în baza de date.
 
 ### Autentificare și autorizare
 Autentificarea utilizatorilor este gestionată de Firebase Authentication, asigurând că doar utilizatorii autentificați au acces la funcționalitățile site-ului, cum ar fi realizarea unei rezervări.
+
+### Hostare cu Vercel
+Vercel este o platformă de hostare și colaborare pentru site-uri și aplicații web moderne. Aceasta oferă un mediu simplu și scalabil pentru a desfășura rapid și eficient aplicațiile web, permițând dezvoltatorilor să se concentreze pe construirea produsului lor fără a se preocupa de infrastructura de hosting.
